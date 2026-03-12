@@ -1,0 +1,367 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Rodrigo Alegre- Desarrollador Web">
+  <main class="landing">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="greeting">Hola, soy</span>
+        <h1>Rodrigo Alegre</h1>
+        <p class="title">Desarrollador <span class="highlight">Full Stack</span></p>
+        <p class="description">
+          Transformo ideas en experiencias digitales extraordinarias. 
+          Especializado en crear aplicaciones web modernas, rápidas y escalables.
+        </p>
+        <div class="cta-group">
+          <a href="/contacto" class="btn btn-primary">
+            <span>Trabajemos juntos</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="/about" class="btn btn-outline">Saber más</a>
+        </div>
+      </div>
+      </div>
+      <div class="hero-visual">
+        <div class="glow"></div>
+        <div class="card">
+          <div class="card-content">
+            <div class="code-block">
+              <span class="line"><span class="keyword">const</span> <span class="var">developer</span> = {</span>
+              <span class="line">&nbsp;&nbsp;<span class="prop">passion</span>: <span class="string">"creating"</span>,</span>
+              <span class="line">&nbsp;&nbsp;<span class="prop">focus</span>: <span class="string">"user experience"</span>,</span>
+              <span class="line">&nbsp;&nbsp;<span class="prop">level</span>: <span class="string">"senior"</span></span>
+              <span class="line">};</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise">
+      <h2>Expertise</h2>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <h3>Frontend</h3>
+          <p>Creación de interfaces modernas y responsivas con las últimas tecnologías.</p>
+          <div class="tags">
+            <span>React</span>
+            <span>Astro</span>
+            <span>TypeScript</span>
+          </div>
+        </div>
+        <div class="expertise-card">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 11 4 5"/><path d="M12 19h8"/></svg>
+          </div>
+          <h3>Backend</h3>
+          <p>Desarrollo de APIs robustas y sistemas escalables.</p>
+          <div class="tags">
+            <span>Node.js</span>
+            <span>Python</span>
+            <span>GraphQL</span>
+          </div>
+        </div>
+        <div class="expertise-card">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+          </div>
+          <h3>Data</h3>
+          <p>Diseño y optimización de bases de datos de alto rendimiento.</p>
+          <div class="tags">
+            <span>PostgreSQL</span>
+            <span>MongoDB</span>
+            <span>Redis</span>
+          </div>
+        </div>
+        <div class="expertise-card">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Cloud</h3>
+          <p>Infraestructura moderna y despliegues automatizados.</p>
+          <div class="tags">
+            <span>AWS</span>
+            <span>Docker</span>
+            <span>CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>¿Tienes un proyecto en mente?</h2>
+        <p>Hablemos sobre cómo puedo ayudarte a hacerlo realidad.</p>
+        <a href="/contacto" class="btn btn-primary btn-large">Iniciar conversación</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .landing {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    min-height: 70vh;
+    padding-top: 2rem;
+  }
+
+  .greeting {
+    display: block;
+    font-size: 1.1rem;
+    color: #0072ff;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    color: #a0a0a0;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  .highlight {
+    color: #00c6ff;
+    font-weight: 600;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 198, 255, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 198, 255, 0.4);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-outline:hover {
+    border-color: #00c6ff;
+    color: #00c6ff;
+  }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 198, 255, 0.2) 0%, transparent 70%);
+    filter: blur(40px);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+  }
+
+  .card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .code-block {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+
+  .line {
+    display: block;
+  }
+
+  .keyword { color: #ff79c6; }
+  .var { color: #8be9fd; }
+  .prop { color: #50fa7b; }
+  .string { color: #f1fa8c; }
+
+  .expertise {
+    padding: 4rem 0;
+  }
+
+  .expertise h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .expertise-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 1.8rem;
+    transition: all 0.3s ease;
+  }
+
+  .expertise-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 198, 255, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(0, 198, 255, 0.2) 0%, rgba(0, 114, 255, 0.2) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    color: #00c6ff;
+  }
+
+  .expertise-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  .expertise-card p {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tags span {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    color: #aaa;
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 198, 255, 0.05) 100%);
+    border-radius: 24px;
+    margin-top: 2rem;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .cta-content p {
+    color: #888;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    .description {
+      margin: 0 auto 2rem;
+    }
+
+    .cta-group {
+      justify-content: center;
+    }
+
+    .expertise-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .expertise-grid {
+      grid-template-columns: 1fr;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>

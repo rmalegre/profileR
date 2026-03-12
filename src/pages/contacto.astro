@@ -1,0 +1,338 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const contactInfo = [
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
+    label: "Email",
+    value: "rodrigo@ejemplo.com",
+    href: "mailto:rodrigo@ejemplo.com"
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+    label: "Teléfono",
+    value: "+52 123 456 7890",
+    href: "tel:+521234567890"
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    label: "Ubicación",
+    value: "Ciudad de México, México",
+    href: null
+  },
+];
+---
+
+<BaseLayout title="Contacto - Rodrigo Alegre">
+  <main class="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h1>Hablemos</h1>
+        <p class="subtitle">¿Tienes un proyecto en mente? ¿Te gustaría trabajar conmigo? No dudes en contactarme.</p>
+        
+        <div class="info-list">
+          {contactInfo.map((info) => (
+            <div class="info-item">
+              <div class="info-icon" set:html={info.icon} />
+              <div class="info-content">
+                <span class="info-label">{info.label}</span>
+                {info.href ? (
+                  <a href={info.href} class="info-value">{info.value}</a>
+                ) : (
+                  <span class="info-value">{info.value}</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="social-section">
+          <span class="social-label">También puedes encontrarme en</span>
+          <div class="social-icons">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <form class="contact-form">
+          <div class="form-header">
+            <h2>Envíame un mensaje</h2>
+            <p>Responderé lo antes posible</p>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Nombre
+              </label>
+              <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+              </label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Asunto
+            </label>
+            <input type="text" id="subject" name="subject" placeholder="¿Sobre qué quieres hablar?" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="message">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Mensaje
+            </label>
+            <textarea id="message" name="message" rows="5" placeholder="Tu mensaje..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn-submit">
+            <span>Enviar mensaje</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .contact {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* add some top margin just for extra clearance under navbar */
+    margin-top: 4rem;
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    color: #888;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .info-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(0, 198, 255, 0.15) 0%, rgba(0, 114, 255, 0.15) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00c6ff;
+  }
+
+  .info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .info-label {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .info-value {
+    color: #e0e0e0;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  a.info-value:hover {
+    color: #00c6ff;
+  }
+
+  .social-section {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .social-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .social-icons a {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: #888;
+    transition: all 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    background: rgba(0, 198, 255, 0.15);
+    border-color: rgba(0, 198, 255, 0.4);
+    color: #00c6ff;
+    transform: translateY(-2px);
+  }
+
+  .contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .form-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .form-header p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #aaa;
+  }
+
+  .form-group label svg {
+    color: #00c6ff;
+  }
+
+  input, textarea {
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #e0e0e0;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #555;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #00c6ff;
+    background: rgba(0, 198, 255, 0.05);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+  }
+
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 198, 255, 0.35);
+  }
+
+  @media (max-width: 800px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

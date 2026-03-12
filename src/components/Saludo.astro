@@ -1,0 +1,25 @@
+---
+// src/components/Saludo.astro
+interface Props {
+  nombre: string;
+  colores?: string[];
+}
+
+const { nombre, colores = ["rojo", "azul", "verde"] } = Astro.props;
+---
+<h1>Hola, {nombre}!</h1>
+<p>Estos son tus colores favoritos:</p>
+<ul>
+  {colores.map(color => (
+    <li>{color}</li>
+  ))}
+</ul>
+
+<style>
+  h1 {
+    color: #333;
+  }
+  ul {
+    list-style-type: square;
+  }
+</style>
